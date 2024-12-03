@@ -19,10 +19,6 @@ const getDistance = (leftList, rightList) => {
   return total;
 };
 
-const [col1, col2] = splitColumnsIntoArray(input);
-const totalDistance = getDistance(col1, col2);
-console.log({ totalDistance });
-
 const getOccurrenceMap = (list) => {
   const map = {};
   for (let i = 0; i < list.length; i++) {
@@ -46,5 +42,11 @@ const calculateSimilarityScore = (leftList, rightList) => {
   return total;
 };
 
-const total = calculateSimilarityScore(col1, col2);
-console.log({ total });
+const main = () => {
+  const [col1, col2] = splitColumnsIntoArray(input);
+  const totalDistance = getDistance(col1, col2);
+  const total = calculateSimilarityScore(col1, col2);
+  console.log({ totalDistance, total });
+};
+
+main();
